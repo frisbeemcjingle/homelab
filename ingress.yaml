@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issure: letsencrypt-production
+  name: homelab
+  namespace: homelab
+spec:
+  ingressClassNamd: traefik
+  rules:
+    - host: home.wvhomelab.xyz
+      http:
+        paths:
+          - backend:
+              service:
+                name: homelab
+                port:
+                  number: 7575
+            path: /
+            pathtype: Prefix
+  tls:
+    - hosts:
+        - home.wvhomelab.xyz
+      secretName: homelab-ingress-production
