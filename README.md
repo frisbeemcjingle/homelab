@@ -1,1 +1,1 @@
-Learning Kubernetes, home lab development and raspberry pi clusters with docker and other services. 
+Learning Kubernetes, home lab development on raspberry pi clusters with k3s docker and other services. 
